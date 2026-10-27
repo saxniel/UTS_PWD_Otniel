@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sequencers — Legal Multitrack Rental</title>
+    <!-- Google Fonts untuk Tipografi Editorial -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/CSS/style.css">
+</head>
+<body>
+
+    <!-- Header dan Navigasi -->
+    <header class="navbar">
+        <div class="logo">sequencers.</div>
+        <nav>
+            <a href="#cara-kerja">Cara Kerja</a>
+            <a href="#katalog">Katalog</a>
+            <a href="#faq">FAQ</a>
+        </nav>
+        <button id="themeToggleBtn" class="btn-theme">🌙 Mode Gelap</button>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1 class="hero-title">PRODUCE LIKE A PRO.<br>TANPA DRAMA HAK CIPTA.</h1>
+            <p class="hero-subtitle">
+                Sewa multitrack stems resmi dari produser hits. Dilengkapi enkripsi DRM berjangka waktu—file aman, legal, dan otomatis terhapus saat masa sewa habis.
+            </p>
+            <div class="hero-actions">
+                <a href="#katalog" class="btn-primary">Jelajahi Sequencer</a>
+                <button id="toggleCaraKerjaBtn" class="btn-secondary">Lihat Cara Kerja (+)</button>
+            </div>
+        </section>
+
+        <!-- Cara Kerja -->
+        <section id="cara-kerja" class="cara-kerja-container hidden">
+            <h2 class="section-title">5 LANGKAH SEWA </h2>
+            <div class="grid-steps">
+                <div class="step-card">
+                    <span class="step-num">01</span>
+                    <h3>Preview Track</h3>
+                    <p>Pilih sequencer dan dengarkan sampel melalui link YouTube/Cloud produser.</p>
+                </div>
+                <div class="step-card">
+                    <span class="step-num">02</span>
+                    <h3>Bayar Sewa</h3>
+                    <p>Lakukan transaksi sewa sesuai durasi proyek yang kamu butuhkan.</p>
+                </div>
+                <div class="step-card">
+                    <span class="step-num">03</span>
+                    <h3>Download File</h3>
+                    <p>Unduh file WAV terenkripsi DRM yang terlindungi dari pembajakan.</p>
+                </div>
+                <div class="step-card">
+                    <span class="step-num">04</span>
+                    <h3>Mainkan di DAW</h3>
+                    <p>Impor file ke DAW favoritmu (FL Studio, Ableton, Logic, dll).</p>
+                </div>
+                <div class="step-card">
+                    <span class="step-num">05</span>
+                    <h3>Auto-Expired</h3>
+                    <p>Saat masa sewa habis, akses file otomatis terkunci secara permanen.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Katalog Section -->
+        <section id="katalog" class="katalog-section">
+            <div class="katalog-header">
+                <h2 class="section-title">KATALOG SEQUENCER</h2>
+                
+                <!-- Filter dan Searchbar -->
+                <div class="filter-box">
+                    <input type="text" id="searchInput" placeholder="Cari judul / produser..." class="input-search">
+                    <div class="filter-buttons">
+                        <button class="filter-btn active" data-genre="all">Semua</button>
+                        <button class="filter-btn" data-genre="pop">Pop</button>
+                        <button class="filter-btn" data-genre="hiphop">Hip-Hop</button>
+                        <button class="filter-btn" data-genre="edm">EDM</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Grid Track Card -->
+            <div class="grid-katalog" id="catalogGrid">
+                <article class="track-card" data-genre="pop">
+                    <div class="track-tag">POP / RNB</div>
+                    <h3 class="track-title">Midnight Drive Stems</h3>
+                    <p class="track-producer">By: Producer Ray</p>
+                    <div class="track-price">Rp 150.000 / 7 Hari</div>
+                    <div class="track-actions">
+                        <a href="https://youtube.com" target="_blank" class="btn-link">▶ YouTube</a>
+                        <button class="btn-rent" onclick="openRentModal('Midnight Drive Stems')">Rent & Download</button>
+                    </div>
+                </article>
+
+                <article class="track-card" data-genre="hiphop">
+                    <div class="track-tag">HIP-HOP</div>
+                    <h3 class="track-title">808 Urban Trap Loop</h3>
+                    <p class="track-producer">By: BeatMaster Jax</p>
+                    <div class="track-price">Rp 200.000 / 14 Hari</div>
+                    <div class="track-actions">
+                        <a href="https://youtube.com" target="_blank" class="btn-link">▶ YouTube</a>
+                        <button class="btn-rent" onclick="openRentModal('808 Urban Trap Loop')">Rent & Download</button>
+                    </div>
+                </article>
+
+                <article class="track-card" data-genre="edm">
+                    <div class="track-tag">EDM</div>
+                    <h3 class="track-title">Neon Pulse Synthwave</h3>
+                    <p class="track-producer">By: Synthia</p>
+                    <div class="track-price">Rp 175.000 / 7 Hari</div>
+                    <div class="track-actions">
+                        <a href="https://youtube.com" target="_blank" class="btn-link">▶ YouTube</a>
+                        <button class="btn-rent" onclick="openRentModal('Neon Pulse Synthwave')">Rent & Download</button>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="faq-section">
+            <h2 class="section-title">FREQUENTLY ASKED QUESTIONS</h2>
+            
+            <div class="accordion-item">
+                <button class="accordion-btn">Apakah file ini legal untuk dipakai rilis lagu? <span>+</span></button>
+                <div class="accordion-content">
+                    <p>Ya! Semua sequencer di sini disewakan resmi langsung dari produser dengan lisensi penggunaan komersial selama masa sewa aktif.</p>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-btn">Bagaimana jika masa sewa saya habis? <span>+</span></button>
+                <div class="accordion-content">
+                    <p>File terenkripsi DRM akan kedaluwarsa secara otomatis dan tidak bisa diputar di DAW mana pun kecuali kamu memperpanjang sewa.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal Form Sewa -->
+    <div id="rentModal" class="modal hidden">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeRentModal()">&times;</span>
+            <h2>Form Sewa Sequencer</h2>
+            <p id="selectedTrackName" class="modal-track-name">Track Name</p>
+
+            <form id="rentForm" onsubmit="handleFormSubmit(event)">
+                <div class="form-group">
+                    <label for="nama">Nama Lengkap</label>
+                    <input type="text" id="nama" required placeholder="Masukkan nama...">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email (Untuk Pengiriman File Encrypted)</label>
+                    <input type="email" id="email" required placeholder="email@domain.com">
+                </div>
+                <div class="form-group">
+                    <label for="durasi">Durasi Sewa</label>
+                    <select id="durasi">
+                        <option value="7">7 Hari</option>
+                        <option value="14">14 Hari</option>
+                        <option value="30">30 Hari</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-primary w-full">Lanjutkan Pembayaran</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 sequencers. All rights reserved. Platform Persewaan Sequencer Resmi.</p>
+    </footer>
+
+    <script src="/JS/script.js"></script>
+</body>
+</html>
+
