@@ -82,7 +82,7 @@ accordionBtns.forEach(btn => {
     });
 });
 
-// 6. Modal Form Sewa
+// 6. Form Sewa
 const rentModal = document.getElementById('rentModal');
 const selectedTrackName = document.getElementById('selectedTrackName');
 

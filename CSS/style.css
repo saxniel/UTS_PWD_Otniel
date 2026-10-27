@@ -486,7 +486,7 @@ footer {
     width: 100%;
 }
 
-/* Panah Kustom buatan CSS */
+/* Panah Kustom CSS */
 .select-wrapper::after {
     content: '▾';
     font-size: 1.2rem;
@@ -499,7 +499,7 @@ footer {
     color: var(--text-color);
 }
 
-/* Hapus panah bawaan browser/Bootstrap */
+/* Hapus panah bootstrap */
 .form-select-custom {
     appearance: none;
     -webkit-appearance: none;
@@ -509,7 +509,7 @@ footer {
     cursor: pointer;
 }
 
-/* Animasi Panah Berputar 180 Derajat & Kotak Mengembang saat Klik/Fokus */
+/* Animasi */
 .select-wrapper:focus-within::after {
     transform: translateY(-50%) rotate(180deg);
 }
