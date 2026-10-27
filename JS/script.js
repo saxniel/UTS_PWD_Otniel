@@ -102,3 +102,4 @@ function handleFormSubmit(event) {
     closeRentModal();
     document.getElementById('rentForm').reset();
 }
+

@@ -4,15 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>sequencers — Legal Multitrack Rental</title>
-    <!-- Google Fonts untuk Tipografi Editorial -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Custom Style -->
     <link rel="stylesheet" href="/CSS/style.css">
 </head>
 <body>
 
-    <!-- Header dan Navigasi -->
+    <!-- Header n Navigasi -->
     <header class="navbar">
         <div class="logo">sequencers.</div>
         <nav>
@@ -38,7 +43,7 @@
 
         <!-- Cara Kerja -->
         <section id="cara-kerja" class="cara-kerja-container hidden">
-            <h2 class="section-title">5 LANGKAH SEWA </h2>
+            <h2 class="section-title">5 LANGKAH SEWA LEGAL</h2>
             <div class="grid-steps">
                 <div class="step-card">
                     <span class="step-num">01</span>
@@ -68,12 +73,12 @@
             </div>
         </section>
 
-        <!-- Katalog Section -->
+        <!-- Katalog -->
         <section id="katalog" class="katalog-section">
             <div class="katalog-header">
                 <h2 class="section-title">KATALOG SEQUENCER</h2>
                 
-                <!-- Filter dan Searchbar -->
+                <!-- Filter n Search -->
                 <div class="filter-box">
                     <input type="text" id="searchInput" placeholder="Cari judul / produser..." class="input-search">
                     <div class="filter-buttons">
@@ -142,41 +147,110 @@
         </section>
     </main>
 
-    <!-- Modal Form Sewa -->
-    <div id="rentModal" class="modal hidden">
-        <div class="modal-content">
-            <span class="modal-close" onclick="closeRentModal()">&times;</span>
-            <h2>Form Sewa Sequencer</h2>
-            <p id="selectedTrackName" class="modal-track-name">Track Name</p>
+   <!-- Modal Form Sewa -->
+<div id="rentModal" class="modal-overlay hidden">
+    <div class="modal-card">
+        <span class="modal-close" onclick="closeRentModal()">&times;</span>
+        <h2 class="h4 fw-bold mb-1">FORM SEWA SEQUENCER</h2>
+        <p id="selectedTrackName" class="text-muted mb-3 fs-6">Track Name</p>
 
-            <form id="rentForm" onsubmit="handleFormSubmit(event)">
-                <div class="form-group">
-                    <label for="nama">Nama Lengkap</label>
-                    <input type="text" id="nama" required placeholder="Masukkan nama...">
+        <form id="rentForm" onsubmit="handleFormSubmit(event)">
+            <!-- Nama -->
+            <div class="mb-3 text-start">
+                <label for="nama" class="form-label fw-semibold">Nama Lengkap</label>
+                <input type="text" class="form-control" id="nama" required placeholder="Masukkan nama lengkap...">
+            </div>
+
+            <!-- Alamat -->
+            <div class="mb-3 text-start">
+                <label for="alamat" class="form-label fw-semibold">Alamat</label>
+                <textarea class="form-control" id="alamat" rows="2" placeholder="Masukkan alamat lengkap..."></textarea>
+            </div>
+
+           <!-- Negara Asal -->
+                <div class="mb-3 text-start">
+                <label for="negara" class="form-label fw-semibold">Negara Asal</label>
+                    <div class="select-wrapper">
+                        <select class="form-select form-select-custom" id="negara" required>
+                            <option value="" selected disabled>-- Pilih Negara --</option>
+                            <option value="Indonesia">Indonesia</option>
+                            <option value="Malaysia">Malaysia</option>
+                            <option value="Singapura">Singapura</option>
+                            <option value="Thailand">Thailand</option>
+                            <option value="Vietnam">Vietnam</option>
+                            <option value="Filipina">Filipina</option>
+                            <option value="Japan">Japan</option>
+                            <option value="China">China</option>
+                            <option value="United State of America">United State of America</option>
+                            <option value="European Union">European Union</option>
+                            <option value="African Union">African Union</option>
+                            <option value="Russia">Russia</option>
+                            <option value="Australia">Australia</option>
+                        </select>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="email">Email (Untuk Pengiriman File Encrypted)</label>
-                    <input type="email" id="email" required placeholder="email@domain.com">
+
+            <!-- Genre Favotitmu -->
+            <div class="mb-3 text-start">
+                <label class="form-label fw-semibold d-block">Genre Favorit</label>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="Genre1" value="Pop">
+                    <label class="form-check-label" for="Genre1">Pop</label>
                 </div>
-                <div class="form-group">
-                    <label for="durasi">Durasi Sewa</label>
-                    <select id="durasi">
-                        <option value="7">7 Hari</option>
-                        <option value="14">14 Hari</option>
-                        <option value="30">30 Hari</option>
-                    </select>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="Genre2" value="Rock">
+                    <label class="form-check-label" for="Genre2">Rock</label>
                 </div>
-                <button type="submit" class="btn-primary w-full">Lanjutkan Pembayaran</button>
-            </form>
-        </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="Genre3" value="Jazz">
+                    <label class="form-check-label" for="Genre3">Jazz</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="Genre4" value="Classical">
+                    <label class="form-check-label" for="Genre4">Classical</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="Genre5" value="Alternative">
+                    <label class="form-check-label" for="Genre5">Alternative</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="Genre6" value="Indie">
+                    <label class="form-check-label" for="Genre6">Indie</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="Genre7" value="Electronic">
+                    <label class="form-check-label" for="Genre7">Electronic</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="Genre8" value="Hip-Hop">
+                    <label class="form-check-label" for="Genre8">Hip-Hop</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="Genre9" value="Metal">
+                    <label class="form-check-label" for="Genre9">Metal</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="Genre10" value="Country">
+                    <label class="form-check-label" for="Genre10">Country</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="Genre11" value="Reggae">
+                    <label class="form-check-label" for="Genre11">Reggae</label>
+                    <label class="form-check-label" for="Genre4">Classical</label>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-dark w-100 mt-2 py-2 fw-bold">Sewa Sekarang</button>
+        </form>
     </div>
+</div>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2026 sequencers. All rights reserved. Platform Persewaan Sequencer Resmi.</p>
+        <p>&copy; 2026 sequencers. All rights reserved.</p>
+        <p class="footer-identity">NIM: A12.2025.07362 | Nama: OTNIEL</p>
     </footer>
 
     <script src="/JS/script.js"></script>
 </body>
 </html>
-
